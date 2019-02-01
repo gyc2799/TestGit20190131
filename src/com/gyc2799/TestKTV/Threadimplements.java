@@ -1,18 +1,20 @@
 package com.gyc2799.TestKTV;
 
 public class Threadimplements implements Runnable {
+	private String name;
+	Threadimplements(String Tname){
+		this.name=Tname;
+	}
 	public void run() {
 		try {
 			Thread.sleep(1000);
-			System.out.println("Thread Running……");
+			System.out.println(this.name+"Thread Running……");
 		}catch(Exception ex){
 				ex.printStackTrace();
 		}finally {
+			////
 			//System.out.println("程序完成");
 		}
 	}
-	public static void main(String[] args) {
-		Thread t1 = new Thread();
-		t1.start();
-	}
+	
 }
